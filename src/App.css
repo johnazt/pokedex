@@ -3,3 +3,8 @@
   margin: 0 auto;
   padding: 2rem;
 }
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover
+}
