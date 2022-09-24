@@ -25,6 +25,7 @@ const UserInput = () => {
 				</div>
 				<div className="container-input">
 					<input
+						className="input-style"
 						type="text"
 						value={username}
 						placeholder="Tu nombre..."

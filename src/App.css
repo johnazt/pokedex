@@ -14,6 +14,12 @@ img {
 	display: block;
 	object-fit: cover;
 }
+.input-style {
+	border: transparent;
+	padding: 0.7em;
+	font-size: 1rem;
+	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+}
 
 /* ========= WELCOME PAGE ============= */
 
@@ -41,12 +47,6 @@ img {
 	row-gap: 1em;
 	min-width: 250px;
 }
-.container-input input {
-	border: transparent;
-	padding: 0.7em;
-	font-size: 1rem;
-	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
-}
 .bg-red-black {
 	height: 80px;
 	width: 100%;
@@ -60,52 +60,100 @@ img {
 }
 .pokeball {
 	border-radius: 50%;
-	box-shadow: 0px 0px 0px 7px #000, 0px 0px 0px 14px #fff, 0px 0px 0px 20px #000;
-	width: 23px;
-	height: 23px;
+	box-shadow: 0px 0px 0px 5px #000, 0px 0px 0px 13px #fff, 0px 0px 0px 20px #000;
+	width: 25px;
+	height: 25px;
 	background-color: rgb(54, 53, 53);
 	margin-top: 2em;
 }
 
 /* ======= POKEMON COMPONENT =========== */
+.bg-top {
+	top: 0;
+	bottom: none;
+	padding: 0 1em;
+	z-index: -1;
+}
+.container-title {
+	display: flex;
+	justify-content: space-between;
+}
+.pokeball-top {
+	margin-top: 3.3em;
+	margin-right: 1em;
+}
+.pokemon-title-img {
+	max-width: 220px;
+	object-fit: contain;
+}
+.container-pokemon-page {
+	padding: 0 1em;
+}
+.container-pokemon-welcome {
+	display: flex;
+	padding-top: 2em;
+	font-size: 18px;
+	flex-direction: column;
+}
+.container-pokemon-welcome b {
+	color: rgba(254, 25, 54, 1);
+	font-size: 22px;
+}
+.container-search {
+	margin: 1em 0;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	row-gap: 1em;
+}
+.select {
+	width: 100%;
+	border: transparent;
+	padding: 1em;
+	font-size: 1rem;
+	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+}
 .container-list-pokemon {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
+/* ========== MEDIA QUERIES DESKTOP ============== */
+
 @media screen and (min-width: 768px) {
-  .container-intro-page {
-    row-gap: 4em;
-    padding-bottom: 5em;
-  }
-  .poke-title {
-    max-width: 650px;
-  }
-  .greeting-text {
-    font-size: 50px;
-  }
-  .greeting-text-secundary {
-    font-size: 25px;
-  }
-  .container-input {
-    flex-direction: row;
-    min-width: 650px;
-    font-size: 24px;
-  }
-  .container-input input {
-    width: 100%;
-    font-size: 24px;
-  }
-  .container-input button {
-    min-width: 33%;
-  }
-  .bg-red-black {
-    height: 160px;
-  }
-  .pokeball {
-    box-shadow: 0px 0px 0px 10px #000, 0px 0px 0px 20px #fff, 0px 0px 0px 30px #000;
-    width: 35px;
-    height: 35px;
-    margin-top: 6em;
-  }
+	.container-intro-page {
+		row-gap: 4em;
+		padding-bottom: 5em;
+	}
+	.poke-title {
+		max-width: 650px;
+	}
+	.greeting-text {
+		font-size: 50px;
+	}
+	.greeting-text-secundary {
+		font-size: 25px;
+	}
+	.container-input {
+		flex-direction: row;
+		min-width: 650px;
+		font-size: 24px;
+	}
+	.container-input input {
+		width: 100%;
+		font-size: 24px;
+	}
+	.container-input button {
+		min-width: 33%;
+	}
+	.bg-red-black {
+		height: 160px;
+	}
+	.pokeball {
+		box-shadow: 0px 0px 0px 10px #000, 0px 0px 0px 20px #fff,
+			0px 0px 0px 30px #000;
+		width: 35px;
+		height: 35px;
+		margin-top: 6em;
+	}
 }

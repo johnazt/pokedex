@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import pokeImg from "../assets/poketitle.png";
 import PokemonCard from "./PokemonCard";
 
 const Pokemons = () => {
@@ -54,38 +55,44 @@ const Pokemons = () => {
 
 	return (
 		<div>
-			<h2>Pokemons</h2>
-			<p>Bienvenido {username}, aquí podrás encontrar tu pokemón favorito</p>
-			<div className="container-search">
-				<input
-					type="text"
-					placeholder="Buscar por nombre"
-					value={inputName}
-					onChange={e => setInputName(e.target.value)}
-				/>
-				<button onClick={searchByName}>Search</button>
-			</div>
-			<div className="container-select">
-				<select onChange={e => searchByType(e.target.value)}>
-					<option value="">Selecciona un tipo de elemento</option>
-					{pokemonType.map(type => (
-						<option key={type.name} value={type.url}>
-							{type.name}
-						</option>
-					))}
-				</select>
-			</div>
-			<main>
-				<ul className="container-list-pokemon">
-					{pokemons?.map(pokemon => (
-						<PokemonCard
-							key={pokemon.name }
-							url={pokemon.url  }
+			<div className="bg-red-black bg-top"></div>
+			<div className="container-pokemon-page">
+				<div className="container-title">
+					<img className="pokemon-title-img" src={pokeImg} alt="poke-title" />
+					<div className="pokeball pokeball-top"></div>
+				</div>
+				<div className="container-pokemon-welcome">
+					<p><b>Bienvenido {username},</b> aquí podrás encontrar tu pokemón favorito</p>
+					<div className="container-search">
+						<input
+							className="input-style"
+							type="text"
+							placeholder="Buscar por nombre"
+							value={inputName}
+							onChange={e => setInputName(e.target.value)}
 						/>
-					))}
-				</ul>
-			</main>
-		</div>
+						<button onClick={searchByName}>Search</button>
+					</div>
+					<div className="container-select">
+						<select className="select" onChange={e => searchByType(e.target.value)}>
+							<option value="">Selecciona un tipo de elemento</option>
+							{pokemonType.map(type => (
+								<option className="div" key={type.name} value={type.url}>
+									{type.name}
+								</option>
+							))}
+						</select>
+					</div>
+				</div>
+				<main>
+					<ul className="container-list-pokemon">
+						{pokemons?.map(pokemon => (
+							<PokemonCard key={pokemon.name} url={pokemon.url} />
+						))}
+					</ul>
+				</main>
+						</div>
+			</div>
 	);
 };
 
