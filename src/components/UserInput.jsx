@@ -34,9 +34,9 @@ const UserInput = () => {
 					/>
 					<button onClick={getUser}>Comenzar</button>
 				</div>
-			<div className="bg-red-black">
+			{/* <div className="bg-red-black">
 				<div className="pokeball"></div>
-			</div>
+			</div> */}
 			</div>
 		</div>
 	);
