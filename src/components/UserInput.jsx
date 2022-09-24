@@ -21,7 +21,9 @@ const UserInput = () => {
 				<img src={pokeImg} className="poke-title" alt="poke-title" />
 				<div className="container-welcome">
 					<p className="greeting-text">¡Hola entrenador!</p>
-					<p className="greeting-text-secundary">Para poder comenzar, dame tu nombre</p>
+					<p className="greeting-text-secundary">
+						Para poder comenzar, dame tu nombre
+					</p>
 				</div>
 				<div className="container-input">
 					<input
@@ -34,9 +36,9 @@ const UserInput = () => {
 					/>
 					<button onClick={getUser}>Comenzar</button>
 				</div>
-			{/* <div className="bg-red-black">
-				<div className="pokeball"></div>
-			</div> */}
+				<div className="bg-red-black">
+					<div className="pokeball"></div>
+				</div>
 			</div>
 		</div>
 	);

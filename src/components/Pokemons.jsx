@@ -15,7 +15,7 @@ const Pokemons = () => {
 	const [pokemonType, setPokemonType] = useState([]);
 	useEffect(() => {
 		axios
-			.get("https://pokeapi.co/api/v2/pokemon/")
+			.get("https://pokeapi.co/api/v2/pokemon?limit=1155&offset=0")
 			.then(res => setPokemons(res.data.results));
 
 		axios
@@ -27,22 +27,6 @@ const Pokemons = () => {
 		navigate(`/pokemons/${inputName}`);
 	};
 
-	// useEffect(() => {
-	//     const keyDownHandler = event => {
-
-	//       if (event.key === 'Enter') {
-	//         event.preventDefault();
-
-	//       }
-	//     };
-
-	//     document.addEventListener('keydown', keyDownHandler);
-
-	//     return () => {
-	//       document.removeEventListener('keydown', keyDownHandler);
-	//     };
-	//   }, []);
-
 	const searchByType = typeUrl => {
 		if (typeUrl) {
 			axios
@@ -51,7 +35,18 @@ const Pokemons = () => {
 		}
 	};
 
-	console.log(pokemons);
+	//Pagination pokemons
+	const [page, setPage] = useState(1);
+	const pokemonsPerPage = 16;
+	const lastPokemonIndex = page * pokemonsPerPage;
+	const firstPokemonIndex = lastPokemonIndex - pokemonsPerPage;
+	const pokemonPagination = pokemons.slice(firstPokemonIndex, lastPokemonIndex);
+
+	const totalPages = Math.ceil(pokemons.length / pokemonsPerPage);
+	const pagesNumbers = [];
+	for (let i = 1; i <= totalPages; i++) {
+		pagesNumbers.push(i);
+	}
 
 	return (
 		<div>
@@ -62,7 +57,10 @@ const Pokemons = () => {
 					<div className="pokeball pokeball-top"></div>
 				</div>
 				<div className="container-pokemon-welcome">
-					<p><b>Bienvenido {username},</b> aquí podrás encontrar tu pokemón favorito</p>
+					<p>
+						<b>Bienvenido {username},</b> aquí podrás encontrar tu pokemón
+						favorito
+					</p>
 					<div className="container-search">
 						<input
 							className="input-style"
@@ -74,7 +72,10 @@ const Pokemons = () => {
 						<button onClick={searchByName}>Search</button>
 					</div>
 					<div className="container-select">
-						<select className="select" onChange={e => searchByType(e.target.value)}>
+						<select
+							className="select"
+							onChange={e => searchByType(e.target.value)}
+						>
 							<option value="">Selecciona un tipo de elemento</option>
 							{pokemonType.map(type => (
 								<option className="div" key={type.name} value={type.url}>
@@ -86,13 +87,31 @@ const Pokemons = () => {
 				</div>
 				<main>
 					<ul className="container-list-pokemon">
-						{pokemons?.map(pokemon => (
+						{pokemonPagination.map(pokemon => (
 							<PokemonCard key={pokemon.name} url={pokemon.url} />
 						))}
 					</ul>
-				</main>
+
+						<div className="container-total-buttons">
+							<button style={{alignSelf: "start"}} onClick={() => setPage(page - 1)} disabled={page === 1}>
+								Prev
+							</button>
+												<div className="container-buttons">
+							{pagesNumbers.map(number => (
+								<button key={number} onClick={() => setPage(number)}>{number}</button>
+							))}
+												</div>
+							<button
+								onClick={() => setPage(page + 1)}
+							disabled={page === totalPages}
+							style={{alignSelf: "start"}}
+							>
+								Next
+							</button>
 						</div>
+				</main>
 			</div>
+		</div>
 	);
 };
 

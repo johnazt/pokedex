@@ -29,7 +29,7 @@ img {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	row-gap: 5em;
+	row-gap: 3em;
 	padding: 0 2em;
 }
 .container-welcome {
@@ -49,14 +49,13 @@ img {
 }
 .bg-red-black {
 	height: 80px;
-	width: 100%;
 	background: linear-gradient(to top, black 0%, black 35%, red 35%, red 100%);
 	position: absolute;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	display: flex;
-	justify-content: center;
+	/* display: flex; */
+	/* justify-content: center; */
 }
 .pokeball {
 	border-radius: 50%;
@@ -114,8 +113,58 @@ img {
 	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
 }
 .container-list-pokemon {
+	margin-top: 3em;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+/* ========== POKEMON CARD ============= */
+
+.pokemon-card {
+	border: 1px solid black;
+	border-radius: 15px;
+	padding: 1em;
+	background-color: #add7a2;
+}
+.pokemon-card-img {
+	background: linear-gradient(red, blue);
+	border-radius: 15px 15px 0 0;
+	max-height: 100px;
+}
+.pokemon-card-img img {
+	max-width: 177px;
+	margin: 0 auto;
+	margin-bottom: -5em;
+}
+.pokemon-card-info {
+	padding-top: 5em;
+	background-color: #fff;
+	border-radius: 0 0 15px 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.pokemon-card-name {
+	font-size: 25px;
+	font-weight: 600;
+	text-transform: capitalize;
+}
+/* ======== CONTAINER BUTTONS PAGINATION ====== */
+.container-total-buttons {
+	display: flex;
+	justify-content: space-between;
+}
+.container-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	text-align: center;
+	justify-content: center;
+}
+.container-buttons button {
+	flex: 1;
+	min-width: 80px;
+	max-width: 80px;
 }
 
 /* ========== MEDIA QUERIES DESKTOP ============== */
