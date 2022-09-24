@@ -16,7 +16,7 @@ const UserInput = () => {
 	};
 
 	return (
-		<div>
+		<div className="container">
 			<div className="container-intro-page">
 				<img src={pokeImg} className="poke-title" alt="poke-title" />
 				<div className="container-welcome">
