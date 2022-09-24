@@ -74,7 +74,7 @@ img {
 .bg-red-black {
 	height: 80px;
 	background: linear-gradient(to top, black 0%, black 35%, red 35%, red 100%);
-	position: absolute;
+	position: fixed;
 	left: 0;
 	right: 0;
 	bottom: 0;
