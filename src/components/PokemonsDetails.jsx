@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+// import img from '../assets/poketitle.png'
 const PokemonsDetails = () => {
 	const { id } = useParams();
 
@@ -21,11 +22,11 @@ const PokemonsDetails = () => {
 			<h2>Pokemons Details</h2>
 			<div>
 				<p>{pokeDetail.name}</p>
-				<img
-					src={pokeDetail.sprites?.other?.["official-artwork"].front_default !== null
-						? pokeDetail.sprites?.other?.["official-artwork"].front_default
-						: pokeDetail.sprites.other.home?.front_default ||
-						  pokeDetail.sprites.front_default}
+                <img
+                    src={pokeDetail.sprites?.other?.["official-artwork"].front_default !== null
+                        ? pokeDetail.sprites?.other?.["official-artwork"].front_default
+                        : pokeDetail.sprites.other.home?.front_default ||
+                        pokeDetail.sprites.front_default }
 					alt="pokemon-detail"
 				/>
 			</div>
