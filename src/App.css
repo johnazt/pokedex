@@ -24,6 +24,8 @@ img {
 /* ========= WELCOME PAGE ============= */
 
 .container  {
+	position: absolute;
+	height: 100%;
 	/* display: flex;  */
 	justify-content: center;
 	/* min-height: 100vh; */
