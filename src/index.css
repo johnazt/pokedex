@@ -7,7 +7,7 @@ a {
   text-decoration: inherit;
 }
 body {
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
 }
 button {
