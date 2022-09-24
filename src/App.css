@@ -12,9 +12,12 @@
   a {
 	text-decoration: inherit;
   }
-  /* body {
-	position: relative;
-  } */
+  body {
+	min-height: 100vh;
+	display: flex; 
+	align-items: center;
+	justify-content: center;
+  }
   button {
 	border: 1px solid transparent;
 	background-color: #D93F3F;
@@ -47,7 +50,7 @@ img {
 
 .container  {
 	/* position: absolute; */
-	min-height: 100vh;
+	/* min-height: 100vh; */
 	display: flex; 
 	align-items: center;
 	justify-content: center;
