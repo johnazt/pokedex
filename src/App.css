@@ -7,22 +7,22 @@
 :root {
 	font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
 	font-size: 16px;
-  }
-  
-  a {
-	text-decoration: inherit;
-  }
+}
 
-  button {
+a {
+	text-decoration: inherit;
+}
+
+button {
 	border: 1px solid transparent;
-	background-color: #D93F3F;
+	background-color: #d93f3f;
 	color: #ffffff;
 	padding: 0.6em 1.2em;
 	font-size: 1em;
 	font-weight: 500;
 	font-family: inherit;
 	cursor: pointer;
-  }
+}
 body {
 	/* min-height: 100vh; */
 }
@@ -74,10 +74,11 @@ img {
 .bg-red-black {
 	height: 80px;
 	background: linear-gradient(to top, black 0%, black 35%, red 35%, red 100%);
-	position: fixed;
+	position: absolute;
 	left: 0;
 	right: 0;
 	bottom: 0;
+	z-index: -10;
 	display: flex;
 	justify-content: center;
 }

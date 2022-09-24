@@ -16,7 +16,7 @@ const UserInput = () => {
 	};
 
 	return (
-		<>
+		
 			<div>
 				<div className="container-intro-page">
 					<img src={pokeImg} className="poke-title" alt="poke-title" />
@@ -38,9 +38,12 @@ const UserInput = () => {
 						<button onClick={getUser}>Comenzar</button>
 					</div>
 				</div>
+				<div className="bg-red-black">
+				<div className="pokeball"></div>
+			</div>
 			</div>
 			
-		</>
+		
 	);
 };
 
