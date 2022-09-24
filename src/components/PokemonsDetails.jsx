@@ -6,13 +6,13 @@ import { useParams } from "react-router-dom";
 const PokemonsDetails = () => {
 	const { id } = useParams();
 
-	const [pokeDetail, setPokeDetail] = useState([]);
+	const [pokeDetail, setPokeDetail] = useState({});
 
 	useEffect(() => {
 		axios
 			.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
 			.then(res => setPokeDetail(res.data));
-	}, []);
+	}, [id]);
 
 	console.log(pokeDetail);
 
@@ -22,7 +22,10 @@ const PokemonsDetails = () => {
 			<div>
 				<p>{pokeDetail.name}</p>
 				<img
-					src={pokeDetail.sprites?.other.dream_world.front_default}
+					src={pokeDetail.sprites?.other?.["official-artwork"].front_default !== null
+						? pokeDetail.sprites?.other?.["official-artwork"].front_default
+						: pokeDetail.sprites.other.home?.front_default ||
+						  pokeDetail.sprites.front_default}
 					alt="pokemon-detail"
 				/>
 			</div>
