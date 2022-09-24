@@ -43,22 +43,14 @@ img {
 
 /* ========= WELCOME PAGE ============= */
 
-.container  {
-	/* position: absolute; */
-	/* height: 100%; */
-	display: flex; 
-	align-items: center;
-	justify-content: center;
-	/* min-height: 100vh; */
-	/* position: relative; */
-}
 .container-intro-page {
-	/* display: flex; */
+	display: flex;
 	/* min-height: 100vh; */
 	justify-content: center;
 	/* align-items: center; */
 	flex-direction: column;
-	/* row-gap: 3em; */
+	row-gap: 3em;
+	margin-top: 14em;
 	padding: 0 2em;
 }
 .container-welcome {
