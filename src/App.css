@@ -45,11 +45,10 @@ img {
 
 .container-intro-page {
 	display: flex;
-
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	row-gap: 3em;
+	row-gap: 2em;
 	margin-top: 10em;
 	padding: 0 2em;
 	background-color: #fff;
@@ -64,6 +63,7 @@ img {
 	margin-bottom: 0.5em;
 }
 .container-input {
+	margin-top: -1em;
 	display: flex;
 	flex-direction: column;
 	row-gap: 1em;
