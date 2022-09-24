@@ -39,9 +39,7 @@ const UserInput = () => {
 					</div>
 				</div>
 			</div>
-			<div className="bg-red-black">
-				<div className="pokeball"></div>
-			</div>
+			
 		</>
 	);
 };

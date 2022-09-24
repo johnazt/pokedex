@@ -16,6 +16,9 @@ function App() {
 						<Route path="/pokemons/:id" element={<PokemonsDetails />} />
 					</Route>
 				</Routes>
+				<div className="bg-red-black">
+				<div className="pokeball"></div>
+			</div>
 			</div>
 		</HashRouter>
 	);
