@@ -25,7 +25,8 @@ img {
 /* ========= WELCOME PAGE ============= */
 
 .container  {
-	/* min-height: 100vh; */
+	min-height: 100%;
+	
 }
 .container-intro-page {
 	display: flex;
