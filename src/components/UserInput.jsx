@@ -16,34 +16,31 @@ const UserInput = () => {
 	};
 
 	return (
-		
-			<div>
-				<div className="container-intro-page">
-					<img src={pokeImg} className="poke-title" alt="poke-title" />
-					<div className="container-welcome">
-						<p className="greeting-text">¡Hola entrenador!</p>
-						<p className="greeting-text-secundary">
-							Para poder comenzar, dame tu nombre
-						</p>
-					</div>
-					<div className="container-input">
-						<input
-							className="input-style"
-							type="text"
-							value={username}
-							placeholder="Tu nombre..."
-							onChange={e => setUsername(e.target.value)}
-							maxLength="30"
-						/>
-						<button onClick={getUser}>Comenzar</button>
-					</div>
+		<div>
+			<div className="container-intro-page">
+				<img src={pokeImg} className="poke-title" alt="poke-title" />
+				<div className="container-welcome">
+					<p className="greeting-text">¡Hola entrenador!</p>
+					<p className="greeting-text-secundary">
+						Para poder comenzar, dame tu nombre
+					</p>
+				</div>
+				<div className="container-input">
+					<input
+						className="input-style"
+						type="text"
+						value={username}
+						placeholder="Tu nombre..."
+						onChange={e => setUsername(e.target.value)}
+						maxLength="30"
+					/>
+					<button onClick={getUser}>Comenzar</button>
 				</div>
 				<div className="bg-red-black">
-				<div className="pokeball"></div>
+					<div className="pokeball"></div>
+				</div>
 			</div>
-			</div>
-			
-		
+		</div>
 	);
 };
 
