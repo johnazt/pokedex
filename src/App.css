@@ -131,6 +131,24 @@
 	font-weight: 600;
 	text-transform: capitalize;
 }
+.pokemon-card-stats {
+	display: flex;
+	justify-content: center;
+	padding: 2em 1em;
+	flex-wrap: wrap;
+	gap: 1.5em;
+}
+.pokemon-stats {
+	text-align: center;
+	min-width: 120px;
+}
+.pokemon-stats p {
+	color: #9F9F9F;
+}
+.pokemon-stats span {
+	color: #416460;
+	font-weight: 600;
+}
 /* ======== CONTAINER BUTTONS PAGINATION ====== */
 .container-total-buttons {
 	display: flex;

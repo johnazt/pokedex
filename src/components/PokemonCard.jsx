@@ -13,6 +13,7 @@ const PokemonCard = props => {
 	}, []);
 
 	const types = pokemon.types;
+	console.log(pokemon.stats);
 
 	return (
 		<div
@@ -42,10 +43,23 @@ const PokemonCard = props => {
 					))}
 				</div>
 				<span>Type</span>
+				<div className="pokemon-card-stats">
+					<div className="pokemon-stats">
+						<p>HP</p> 
+						<span>{pokemon.stats && pokemon.stats[0].base_stat}</span>
+					</div>
+					<div className="pokemon-stats">
+						<p>ATTACK</p> 
+						<span>{pokemon.stats && pokemon.stats[1].base_stat}</span>
+					</div>
+					<div className="pokemon-stats">
+						<p>DEFENSE</p> <span>{pokemon.stats && pokemon.stats[2].base_stat}</span>
+					</div>
+					<div className="pokemon-stats">
+						<p>SPEED</p> <span>{pokemon.stats && pokemon.stats[5].base_stat}</span>
+					</div>
+				</div> 
 			</div>
-
-
-
 		</div>
 	);
 };
