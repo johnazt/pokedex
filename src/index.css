@@ -1,15 +1,22 @@
+:root {
+	--grass: linear-gradient(
+		178.92deg,
+		#7ec6c5 0.92%,
+		#abdac6 47.96%,
+		#cae099 99.08%
+	);
+	--fire: linear-gradient(176.37deg, #F96D6F -32.26%, #E35825 22.55%, #E8AE1B 125.72%);
+
+}
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
-
-:root {
+body {
 	font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
 	font-size: 16px;
-	--grass: linear-gradient(178.92deg, #7EC6C5 0.92%, #ABDAC6 47.96%, #CAE099 99.08%)
 }
-
 a {
 	text-decoration: inherit;
 }
