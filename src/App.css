@@ -1,45 +1,4 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
 
-:root {
-	font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-	font-size: 16px;
-}
-
-a {
-	text-decoration: inherit;
-}
-
-button {
-	border: 1px solid transparent;
-	background-color: #d93f3f;
-	color: #ffffff;
-	padding: 0.6em 1.2em;
-	font-size: 1em;
-	font-weight: 500;
-	font-family: inherit;
-	cursor: pointer;
-}
-
-.App {
-	max-width: 1280px;
-	margin: 0 auto;
-}
-
-img {
-	max-width: 100%;
-	display: block;
-	object-fit: cover;
-}
-.input-style {
-	border: transparent;
-	padding: 0.7em;
-	font-size: 1rem;
-	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
-}
 
 /* ========= WELCOME PAGE ============= */
 
@@ -150,7 +109,7 @@ img {
 	background-color: #add7a2;
 }
 .pokemon-card-img {
-	background: linear-gradient(red, blue);
+	background: var(--grass);
 	border-radius: 15px 15px 0 0;
 	max-height: 100px;
 }
