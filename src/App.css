@@ -155,7 +155,7 @@
 	color: #9F9F9F;
 }
 .pokemon-stats span {
-	color: #416460;
+	color: var(--grass);
 	font-weight: 600;
 	font-size: 20px;
 }
