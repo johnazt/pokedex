@@ -5,6 +5,7 @@ import { getName } from "../store/slices/user.slice";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 const UserInput = () => {
 	const [username, setUsername] = useState("");
 	const dispatch = useDispatch();
@@ -25,6 +26,7 @@ const UserInput = () => {
 					To get started, give me your name
 					</p>
 				</div>
+				
 				<div className="container-input">
 					<input
 						className="input-style"

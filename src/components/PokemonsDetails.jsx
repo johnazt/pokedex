@@ -1,9 +1,11 @@
 import axios from "axios";
 import React from "react";
+import PokeNav from "./PokeNav";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-// import img from '../assets/poketitle.png'
+
+
 const PokemonsDetails = () => {
 	const { id } = useParams();
 
@@ -19,9 +21,8 @@ const PokemonsDetails = () => {
 
 	return (
 		<div>
-			<h2>Pokemons Details</h2>
+			<PokeNav/>
 			<div>
-				<p>{pokeDetail.name}</p>
                 <img
                     src={pokeDetail.sprites?.other?.["official-artwork"].front_default !== null
                         ? pokeDetail.sprites?.other?.["official-artwork"].front_default
@@ -29,6 +30,9 @@ const PokemonsDetails = () => {
                         pokeDetail.sprites.front_default }
 					alt="pokemon-detail"
 				/>
+				<span>#{pokeDetail.order}</span>
+				<p>{pokeDetail.name}</p>
+				
 			</div>
 		</div>
 	);

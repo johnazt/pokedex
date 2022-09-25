@@ -4,8 +4,9 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import pokeImg from "../assets/poketitle.png";
+import PokeNav from "./PokeNav";
 import PokemonCard from "./PokemonCard";
+import Pagination from "./Pagination";
 
 const Pokemons = () => {
 	const username = useSelector(state => state.userName);
@@ -35,7 +36,6 @@ const Pokemons = () => {
 		}
 	};
 
-	//Pagination pokemons
 	const [page, setPage] = useState(1);
 	const pokemonsPerPage = 16;
 	const lastPokemonIndex = page * pokemonsPerPage;
@@ -43,19 +43,11 @@ const Pokemons = () => {
 	const pokemonPagination = pokemons.slice(firstPokemonIndex, lastPokemonIndex);
 
 	const totalPages = Math.ceil(pokemons.length / pokemonsPerPage);
-	const pagesNumbers = [];
-	for (let i = 1; i <= totalPages; i++) {
-		pagesNumbers.push(i);
-	}
 
 	return (
 		<div>
-			<div className="bg-red-black bg-top"></div>
+			<PokeNav/>
 			<div className="container-pokemon-page">
-				<div className="container-title">
-					<img className="pokemon-title-img" src={pokeImg} alt="poke-title" />
-					<div className="pokeball pokeball-top"></div>
-				</div>
 				<div className="container-pokemon-welcome">
 					<p>
 						<b>Bienvenido {username},</b> aquí podrás encontrar tu pokemón
@@ -85,31 +77,16 @@ const Pokemons = () => {
 						</select>
 					</div>
 				</div>
+				<Pagination totalPages={totalPages} page={page} setPage={setPage} />
+
 				<main>
 					<ul className="container-list-pokemon">
 						{pokemonPagination.map(pokemon => (
 							<PokemonCard key={pokemon.name} url={pokemon.url} />
 						))}
 					</ul>
-
-						<div className="container-total-buttons">
-							<button style={{alignSelf: "start"}} onClick={() => setPage(page - 1)} disabled={page === 1}>
-								Prev
-							</button>
-												<div className="container-buttons">
-							{pagesNumbers.map(number => (
-								<button key={number} onClick={() => setPage(number)}>{number}</button>
-							))}
-												</div>
-							<button
-								onClick={() => setPage(page + 1)}
-							disabled={page === totalPages}
-							style={{alignSelf: "start"}}
-							>
-								Next
-							</button>
-						</div>
 				</main>
+				<Pagination totalPages={totalPages} page={page} setPage={setPage} />
 			</div>
 		</div>
 	);

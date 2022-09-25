@@ -7,13 +7,12 @@ import { useNavigate } from "react-router-dom";
 const PokemonCard = props => {
 	const navigate = useNavigate();
 	const [pokemon, setPokemon] = useState({});
+	const types = pokemon.types;
 
 	useEffect(() => {
 		axios.get(props.url).then(res => setPokemon(res.data));
 	}, []);
 
-	const types = pokemon.types;
-	console.log(pokemon.stats);
 
 	return (
 		<div
@@ -34,15 +33,16 @@ const PokemonCard = props => {
 
 			<div className="pokemon-card-info">
 				<p className="pokemon-card-name">{pokemon.name}</p>
-				<div>
+				<div >
 					{types?.map(elem => (
-						<span key={elem.slot}>
-							{elem.type.name}
-							{types.length > 1 && types.indexOf(elem) === 0 ? "/" : ""}
+						<span className="pokemon-card-type" key={elem.slot}>
+							{(elem.type.name).charAt(0).toUpperCase() + (elem.type.name).slice(1)}
+							{types.length > 1 && types.indexOf(elem) === 0 ? " / " : ""}
 						</span>
 					))}
 				</div>
-				<span>Type</span>
+				<span style={{ color: "#9F9F9F", paddingBottom:"1em" }}>Type</span>
+				<hr style={{ width: "100%", border:"none", borderTop:"1px solid #E5E5E5"} } />
 				<div className="pokemon-card-stats">
 					<div className="pokemon-stats">
 						<p>HP</p> 
