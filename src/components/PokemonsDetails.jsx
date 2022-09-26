@@ -21,7 +21,7 @@ const PokemonsDetails = () => {
 	return (
 		<div>
 			<PokeNav />
-			<div style={{ padding: "2em 1em" }}>
+			<div className="container-pokemon-detail">
 				<div className="pokemonDetail-info">
 					<div className="pokemon-details-img">
 						<img
@@ -52,7 +52,7 @@ const PokemonsDetails = () => {
 							</div>
 						</div>
 					</div>
-					<div>
+					<div className="flex-type-abilities">
 						<div className="details-type-abilities">
 							<p className="details-type-abilities-title">Type</p>
 							<div className="flex-type-abilities">

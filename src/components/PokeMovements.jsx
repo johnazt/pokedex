@@ -3,7 +3,7 @@ import Chip from "@mui/material/Chip";
 
 const PokeMovements = ({ movements }) => {
 	return (
-		<div className="pokemonDetail-info" style={{ padding: "2em 1em" }}>
+		<div className="pokemonDetail-info container-movements" >
 			<div className="details-title">Movements</div>
 			<div style={{ display: "flex", flexWrap: "wrap", gap: "1em" }}>
 				{movements?.map(move => (

@@ -46,38 +46,38 @@ const Pokemons = () => {
 
 	return (
 		<div>
-			<PokeNav/>
+			<PokeNav />
 			<div className="container-pokemon-page">
 				<div className="container-pokemon-welcome">
 					<p>
-						<b>Bienvenido {username},</b> aquí podrás encontrar tu pokemón
-						favorito
+						<b>Welcome {username},</b> here you can find your favorite pokemon
 					</p>
-					<div className="container-search">
-						<input
-							className="input-style"
-							type="text"
-							placeholder="Buscar por nombre"
-							value={inputName}
-							onChange={e => setInputName(e.target.value)}
-						/>
-						<button onClick={searchByName}>Search</button>
-					</div>
-					<div className="container-select">
-						<select
-							className="select"
-							onChange={e => searchByType(e.target.value)}
-						>
-							<option value="">Selecciona un tipo de elemento</option>
-							{pokemonType.map(type => (
-								<option className="div" key={type.name} value={type.url}>
-									{type.name}
-								</option>
-							))}
-						</select>
+					<div className="flex-search">
+						<div className="container-search">
+							<input
+								className="input-style"
+								type="text"
+								placeholder="Search by name or number"
+								value={inputName}
+								onChange={e => setInputName(e.target.value)}
+							/>
+							<button onClick={searchByName}>Search</button>
+						</div>
+						<div className="container-select">
+							<select
+								className="select"
+								onChange={e => searchByType(e.target.value)}
+							>
+								<option value="">Select an item type</option>
+								{pokemonType.map(type => (
+									<option className="div" key={type.name} value={type.url}>
+										{type.name}
+									</option>
+								))}
+							</select>
+						</div>
 					</div>
 				</div>
-				<Pagination totalPages={totalPages} page={page} setPage={setPage} />
 
 				<main>
 					<ul className="container-list-pokemon">

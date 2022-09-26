@@ -105,6 +105,11 @@ const PokemonCard = props => {
 				setBgColor("var(--bg-dragon)");
 				setTextColor("var(--text-dragon)");
 				break;
+			case "flying":
+				setLinearColor("var(--linear-flying)");
+				setBgColor("var(--bg-flying)");
+				setTextColor("var(--text-flying)");
+				break;
 			default:
 				break;
 		}
