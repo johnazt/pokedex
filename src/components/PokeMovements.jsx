@@ -1,16 +1,14 @@
 import React from "react";
 import Chip from "@mui/material/Chip";
-import Stack from "@mui/material/Stack";
 
 const PokeMovements = ({ movements }) => {
-	// console.log(movements)
 	return (
-		<div>
-			<h2>Movements</h2>
-            <div style={{ display:"flex", flexWrap:"wrap", gap:"1em"}}>
+		<div className="pokemonDetail-info" style={{ padding: "2em 1em" }}>
+			<div className="details-title">Movements</div>
+			<div style={{ display: "flex", flexWrap: "wrap", gap: "1em" }}>
 				{movements?.map(move => (
-                    <Chip 
-                        key={move.move.name}
+					<Chip
+						key={move.move.name}
 						label={move.move.name}
 						sx={{
 							color: "#302F2F",

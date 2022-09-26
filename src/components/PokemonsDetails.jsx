@@ -23,48 +23,55 @@ const PokemonsDetails = () => {
 			<PokeNav />
 			<div style={{ padding: "2em 1em" }}>
 				<div className="pokemonDetail-info">
-					<img
-						src={
-							pokeDetail.sprites?.other?.["official-artwork"].front_default !==
-							null
-								? pokeDetail.sprites?.other?.["official-artwork"].front_default
-								: pokeDetail.sprites.other.home?.front_default ||
-								  pokeDetail.sprites.front_default
-						}
-						alt="pokemon-detail"
-					/>
-					<span>#{pokeDetail.order}</span>
-					<p>{pokeDetail.name}</p>
-					<div>
+					<div className="pokemon-details-img">
+						<img
+							src={
+								pokeDetail.sprites?.other?.["official-artwork"]
+									.front_default !== null
+									? pokeDetail.sprites?.other?.["official-artwork"]
+											.front_default
+									: pokeDetail.sprites.other.home?.front_default ||
+									  pokeDetail.sprites.front_default
+							}
+							alt="pokemon-detail"
+						/>
+					</div>
+					<div className="pokemon-details-name">
+						<span className="details-id">#{pokeDetail.id}</span>
 						<div>
-							<span>Weight</span>
-							<span>{pokeDetail.weight}</span>
+							<div className="details-name">{pokeDetail.name}</div>
 						</div>
-						<div>
-							<span>Height</span>
-							<span>{pokeDetail.height}</span>
+						<div className="details-container-weight-height">
+							<div className="details-w-h">
+								<span>Weight</span>
+								<span>{pokeDetail.weight}</span>
+							</div>
+							<div className="details-w-h">
+								<span>Height</span>
+								<span>{pokeDetail.height}</span>
+							</div>
 						</div>
 					</div>
 					<div>
-						<div>
-							<p>Type</p>
-							<div>
+						<div className="details-type-abilities">
+							<p className="details-type-abilities-title">Type</p>
+							<div className="flex-type-abilities">
 								{pokeDetail.types?.map(type => (
 									<span key={type.slot}>{type.type.name}</span>
 								))}
 							</div>
 						</div>
-						<div>
-							<p>Abilities</p>
-							<div>
+						<div className="details-type-abilities">
+							<p className="details-type-abilities-title">Abilities</p>
+							<div className="flex-type-abilities">
 								{pokeDetail.abilities?.map(ability => (
 									<span key={ability.slot}>{ability.ability.name}</span>
 								))}
 							</div>
 						</div>
 					</div>
+					<PokemonStats stats={pokeDetail.stats} />
 				</div>
-				<PokemonStats stats={pokeDetail.stats} />
 				<PokeMovements movements={pokeDetail.moves} />
 			</div>
 		</div>

@@ -111,10 +111,10 @@
 	border: transparent;
 	border-radius: 15px;
 	padding: 1em;
-	background-color: #add7a2;
+	/* background-color: #add7a2; */
 }
 .pokemon-card-img {
-	background: var(--grass);
+	/* background: var(--grass); */
 	border-radius: 15px 15px 0 0;
 	max-height: 100px;
 }
@@ -155,11 +155,12 @@
 	color: #9F9F9F;
 }
 .pokemon-stats span {
-	color: var(--grass);
+	/* color: var(--grass); */
 	font-weight: 600;
 	font-size: 20px;
 }
 /* ======== CONTAINER BUTTONS PAGINATION ====== */
+
 .container-total-buttons {
 	display: flex;
 	justify-content: space-between;
@@ -175,6 +176,110 @@
 	flex: 1;
 	min-width: 80px;
 	max-width: 80px;
+}
+
+/* ======== POKEMON DETAILS ======== */
+
+.pokemonDetail-info {
+	border: 2px solid #fff;
+	box-shadow: 1px 1px 5px 3px #ccc;	
+	margin-top: 5em;
+	border-radius: 5px;
+}
+.pokemon-details-img {
+	border-radius: 5px 5px 0 0;
+	background: var(--linear-grass);
+	text-align: center;
+	position: relative;
+	height: 120px;
+}
+.pokemon-details-img img {
+	max-width: 200px;
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: -80px;
+}
+.pokemon-details-name {
+	text-align: center;
+	padding: 2em 0;
+	position: relative;
+}
+.details-id {
+	font-size: 20px;
+	font-weight: 600;
+	border: 1px solid rgb(227, 225, 225);
+	padding: .15em .5em;
+	border-radius: 3px;
+}
+.details-name {
+	font-size: 25px;
+	font-weight: 600;
+	text-transform: capitalize;
+	padding: .7em;
+}
+.details-container-weight-height {
+	display: flex;
+	justify-content: center;
+	column-gap: 1em;
+}
+.details-w-h {
+	display: flex;
+	flex-direction: column;
+}
+.details-w-h span:first-child {
+	font-size: 12px;
+	margin-bottom: .5em;
+}
+.details-w-h span:nth-child(2) {
+	font-size: 20px;
+	font-weight: 600;
+}
+.details-type-abilities {
+	text-align: center;
+	margin-bottom: 2em;
+}
+.details-type-abilities-title {
+    font-weight: 600;
+	font-size: 20px;
+	margin-bottom: 1.5em;
+}
+.flex-type-abilities {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 1em;
+}
+.details-type-abilities span {
+	border: 1px solid #ccc;
+	margin: 0 .5em;
+	padding: .3em 2em;
+	text-transform: capitalize;
+	font-weight: 600;
+	width: 200px;
+}
+.details-title {
+	margin-bottom: 1.5em;
+	font-size: 20px;
+	font-weight: 600;
+}
+.container-title-stats {
+	display: flex;
+	justify-content: space-between;
+}
+.container-title-stats span {
+	font-weight: 600;
+	margin-bottom: .5em;
+}
+.bar-stats {
+	width: 100%;
+	height: 25px;
+	background-color: #F7F7F7;
+}
+.bar-stats-progress {
+	height: 25px;
+	background: linear-gradient(90deg, #FCD676 -2.25%, #E6901E 133.18%);;
 }
 
 /* ========== MEDIA QUERIES DESKTOP ============== */
