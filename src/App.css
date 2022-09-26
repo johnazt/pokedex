@@ -103,6 +103,9 @@
 	grid-template-columns: repeat(auto-fill, minmax(261px, 1fr));
 	gap: 1em;
 }
+.flex-search {
+	margin-bottom: 3em;
+}
 .css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root {
 	font-size: 1.2em !important;
 }
@@ -183,7 +186,10 @@
 }
 
 /* ======== POKEMON DETAILS ======== */
-
+.container-pokemon-detail {
+	max-width: 345px;
+	margin: 0 auto 3em;
+}
 .pokemonDetail-info {
 	border: 2px solid #fff;
 	box-shadow: 1px 1px 5px 3px #ccc;
