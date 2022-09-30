@@ -1,18 +1,18 @@
 import axios from "axios";
 import React from "react";
-import PokeNav from "./PokeNav";
 import PokemonStats from "./PokemonStats";
 import PokeMovements from "./PokeMovements";
+import pokeImg from "../assets/poketitle.png";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import {  useNavigate, useParams } from "react-router-dom";
 
 const PokemonsDetails = () => {
 	const { id } = useParams();
 	const [linearColor, setLinearColor] = useState("");
 	const [textColor, setTextColor] = useState("");
 	const [pokeDetail, setPokeDetail] = useState({});
-
+	const navigate = useNavigate()
 	useEffect(() => {
 		axios
 			.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
@@ -100,7 +100,19 @@ const PokemonsDetails = () => {
 
 	return (
 		<div>
-			<PokeNav />
+			<div style={{ padding: "0 1em" }}>
+			<div className="bg-red-black bg-top"></div>
+			<div className="container-title container-pokedex">
+				<img
+					onClick={() => navigate("/pokemons")}
+					className="pokemon-title-img"
+					src={pokeImg}
+					alt="poke-title"
+				/>
+
+				<div className="pokeball pokeball-top"></div>
+			</div>
+		</div>
 			<div className="container-pokemon-detail">
 				<div className="pokemonDetail-info">
 					<div

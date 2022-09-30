@@ -14,6 +14,7 @@ const Pokemons = () => {
 	const [pokemons, setPokemons] = useState([]);
 	const [inputName, setInputName] = useState("");
 	const [pokemonType, setPokemonType] = useState([]);
+
 	useEffect(() => {
 		axios
 			.get("https://pokeapi.co/api/v2/pokemon?limit=1155&offset=0")
@@ -41,12 +42,11 @@ const Pokemons = () => {
 	const lastPokemonIndex = page * pokemonsPerPage;
 	const firstPokemonIndex = lastPokemonIndex - pokemonsPerPage;
 	const pokemonPagination = pokemons.slice(firstPokemonIndex, lastPokemonIndex);
-
 	const totalPages = Math.ceil(pokemons.length / pokemonsPerPage);
 
 	return (
 		<div>
-			<PokeNav />
+			<PokeNav setPokemons={setPokemons} setPage={setPage} />
 			<div className="container-pokemon-page">
 				<div className="container-pokemon-welcome">
 					<p>

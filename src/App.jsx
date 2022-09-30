@@ -5,6 +5,7 @@ import { HashRouter, Route, Routes } from "react-router-dom";
 import Pokemons from "./components/Pokemons";
 import PokemonsDetails from "./components/PokemonsDetails";
 
+
 function App() {
 	return (
 		<HashRouter>
