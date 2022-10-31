@@ -118,17 +118,15 @@
 	border: transparent;
 	border-radius: 15px;
 	padding: 1em;
-	/* background-color: #add7a2; */
 }
 .pokemon-card-img {
-	/* background: var(--grass); */
 	border-radius: 15px 15px 0 0;
 	max-height: 100px;
 }
 .pokemon-card-img img {
 	max-width: 177px;
 	margin: 0 auto;
-	margin-bottom: -5em;
+	/* margin-bottom: -5em; */
 }
 .pokemon-card-info {
 	padding-top: 5em;
